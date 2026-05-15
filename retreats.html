@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Retreats · Il Sentiero · Sanctuary & Retreats in Salento, Puglia</title>
+<meta name="description" content="Intimate retreats in Salento, Puglia. Private and group retreat experiences held by Nikita — between the wild coastline and the olive trees of Southern Italy. A path back to yourself.">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Outfit:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --limestone: #f2ece0;
+    --sand: #e8dcc8;
+    --parchment: #f7f2e8;
+    --warm-white: #faf7f2;
+    --sunrise-gold: #e8a040;
+    --sea-mid: #3d8a8a;
+    --sea-aqua: #5aacaa;
+    --earth-dark: #2e2318;
+    --earth: #4a3828;
+    --earth-mid: #7a6048;
+    --earth-light: #a88868;
+    --gold: #c8902a;
+    --gold-light: #e0b84a;
+    --olive: #5a6848;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--warm-white);
+    color: var(--earth-dark);
+    font-family: 'Outfit', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 24px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(242,236,224,0.96);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--sand);
+  }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; letter-spacing: 0.1em; color: var(--earth-dark); text-decoration: none; }
+  .nav-links { display: flex; gap: 36px; list-style: none; }
+  .nav-links a { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--earth-mid); text-decoration: none; transition: color 0.3s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+  .nav-right { display: flex; align-items: center; gap: 20px; }
+  .lang-switch { display: flex; gap: 6px; align-items: center; }
+  .lang-switch a { font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--earth-light); text-decoration: none; transition: color 0.3s; }
+  .lang-switch a:hover { color: var(--gold); }
+  .lang-switch span { color: var(--sand); font-size: 0.5rem; }
+  .nav-cta { font-size: 0.66rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--earth); border: 1px solid var(--earth-light); padding: 10px 22px; text-decoration: none; transition: all 0.3s; }
+  .nav-cta:hover { background: var(--gold); border-color: var(--gold); color: white; }
+
+  /* HERO */
+  .hero { height: 75vh; min-height: 520px; position: relative; display: flex; align-items: flex-end; padding-bottom: 72px; overflow: hidden; margin-top: 73px; width: 100vw; margin-left: 0; margin-right: 0; }
+  .hero-photo {
+    position: absolute; inset: 0;
+    background-image: url('retreats-hero.jpg'); /* stone path to sea */
+    background-size: cover;
+    background-position: center 38%;
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, rgba(10,6,2,0.25) 0%, rgba(10,6,2,0.2) 40%, rgba(10,6,2,0.78) 100%);
+  }
+  .hero-content { position: relative; z-index: 2; padding: 0 52px; max-width: 900px; }
+  .hero-eyebrow { font-size: 0.62rem; letter-spacing: 0.32em; text-transform: uppercase; color: var(--sunrise-gold); margin-bottom: 16px; }
+  .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 7vw, 5.5rem); font-weight: 300; line-height: 1.05; color: white; }
+  .hero-title em { font-style: italic; color: var(--sunrise-gold); }
+  .hero-sub { font-family: 'Cormorant Garamond', serif; font-size: clamp(1rem, 2vw, 1.3rem); font-style: italic; color: rgba(255,255,255,0.75); margin-top: 16px; }
+
+  /* SHARED */
+  .container { max-width: 1100px; margin: 0 auto; }
+  .section-label { font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--sea-mid); margin-bottom: 14px; }
+  .section-heading { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; line-height: 1.1; color: var(--earth-dark); margin-bottom: 20px; }
+
+  /* PHILOSOPHY */
+  .philosophy { padding: 96px 48px; background: var(--warm-white); }
+  .philosophy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .philosophy-text p { font-size: 0.95rem; line-height: 1.95; color: var(--earth-mid); margin-bottom: 18px; }
+  .philosophy-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.5;
+    color: var(--earth);
+    padding: 40px;
+    border-left: 2px solid var(--sunrise-gold);
+    background: var(--limestone);
+  }
+  .philosophy-quote em { color: var(--sunrise-gold); font-style: normal; }
+
+  /* DAY STRUCTURE */
+  .day-section { padding: 96px 48px; background: var(--limestone); }
+  .day-intro { max-width: 680px; margin-bottom: 72px; }
+  .day-intro p { font-size: 0.95rem; line-height: 1.95; color: var(--earth-mid); margin-bottom: 16px; }
+  .day-blocks { display: flex; flex-direction: column; gap: 2px; }
+  .day-block {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 0;
+    background: var(--warm-white);
+    overflow: hidden;
+    transition: background 0.3s;
+  }
+  .day-block:hover { background: var(--parchment); }
+  .day-time {
+    padding: 36px 32px;
+    background: var(--earth-dark);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .day-time-label { font-size: 0.58rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--sunrise-gold); margin-bottom: 6px; }
+  .day-time-text { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: white; font-weight: 300; }
+  .day-content { padding: 36px 40px; }
+  .day-content h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 400; color: var(--earth-dark); margin-bottom: 10px; }
+  .day-content p { font-size: 0.88rem; line-height: 1.85; color: var(--earth-mid); }
+
+  /* MORNING RITUAL */
+  .ritual-section { padding: 72px 48px 48px; background: var(--earth-dark); }
+  .ritual-header { text-align: center; margin-bottom: 64px; }
+  .ritual-header .section-label { color: var(--sunrise-gold); }
+  .ritual-header h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; color: white; margin-bottom: 16px; }
+  .ritual-header p { font-size: 0.9rem; line-height: 1.85; color: rgba(255,255,255,0.48); max-width: 580px; margin: 0 auto; }
+  .questions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-bottom: 2px; }
+  .question {
+    background: #3a2818;
+    padding: 48px 36px;
+    transition: background 0.3s;
+  }
+  .question:hover { background: #4a3828; }
+  .question-n { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 300; color: var(--sunrise-gold); opacity: 0.25; line-height: 1; margin-bottom: 20px; }
+  .question-text { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-style: italic; color: white; line-height: 1.5; margin-bottom: 12px; }
+  .question-note { font-size: 0.78rem; line-height: 1.7; color: rgba(255,255,255,0.4); }
+  .question-fourth {
+    background: #2a3828;
+    padding: 36px;
+    text-align: center;
+  }
+  .question-fourth p { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-style: italic; color: rgba(255,255,255,0.6); }
+
+  /* OFFERINGS */
+  .offerings { padding: 96px 48px; background: var(--warm-white); }
+  .offerings-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin-top: 52px; }
+  .offering {
+    position: relative;
+    overflow: hidden;
+    padding: 56px 48px;
+    background: var(--limestone);
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s;
+  }
+  .offering.warm { border-bottom-color: var(--sunrise-gold); }
+  .offering.cool { border-bottom-color: var(--sea-mid); }
+  .offering:hover { background: var(--sand); }
+  .offering-tag { font-size: 0.58rem; letter-spacing: 0.28em; text-transform: uppercase; margin-bottom: 16px; }
+  .offering-tag.warm { color: var(--sunrise-gold); }
+  .offering-tag.cool { color: var(--sea-mid); }
+  .offering h3 { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; color: var(--earth-dark); margin-bottom: 20px; line-height: 1.1; }
+  .offering p { font-size: 0.88rem; line-height: 1.9; color: var(--earth-mid); margin-bottom: 16px; }
+  .offering-includes { margin-top: 28px; padding-top: 28px; border-top: 1px solid var(--sand); }
+  .offering-includes-label { font-size: 0.58rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--earth-light); margin-bottom: 14px; }
+  .offering-includes ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .offering-includes li { font-size: 0.84rem; color: var(--earth-mid); padding-left: 16px; position: relative; }
+  .offering-includes li::before { content: '◆'; position: absolute; left: 0; font-size: 0.4rem; color: var(--sunrise-gold); top: 5px; }
+  .offering-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 28px; font-size: 0.66rem; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; transition: gap 0.3s; }
+  .offering-link.warm { color: var(--sunrise-gold); }
+  .offering-link.cool { color: var(--sea-mid); }
+  .offering-link:hover { gap: 16px; }
+  .offering-link::after { content: '→'; }
+
+  /* SEASONS */
+  .seasons { padding: 80px 48px; background: var(--sand); }
+  .seasons-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; margin-top: 44px; }
+  .season { background: var(--limestone); padding: 44px 32px; transition: background 0.3s; }
+  .season:hover { background: var(--parchment); }
+  .season-dot { width: 6px; height: 6px; border-radius: 50%; margin-bottom: 18px; }
+  .dot-spring { background: #e07830; }
+  .dot-still { background: var(--gold-light); }
+  .dot-return { background: var(--olive); }
+  .season-period { font-size: 0.58rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--sea-mid); margin-bottom: 10px; }
+  .season-name { font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; color: var(--earth-dark); margin-bottom: 10px; }
+  .season-desc { font-size: 0.82rem; line-height: 1.85; color: var(--earth-mid); }
+
+  /* WHAT YOU TAKE HOME */
+  .takeaway { padding: 96px 48px; background: var(--warm-white); text-align: center; }
+  .takeaway-inner { max-width: 720px; margin: 0 auto; }
+  .takeaway h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; color: var(--earth-dark); margin-bottom: 20px; }
+  .takeaway p { font-size: 0.95rem; line-height: 1.95; color: var(--earth-mid); margin-bottom: 16px; }
+  .takeaway-items { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 52px; text-align: left; }
+  .takeaway-item { padding: 32px 28px; background: var(--limestone); border-top: 2px solid var(--sunrise-gold); }
+  .takeaway-item h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--earth-dark); margin-bottom: 10px; }
+  .takeaway-item p { font-size: 0.82rem; line-height: 1.8; color: var(--earth-mid); }
+
+  /* CTA */
+  .cta {
+    position: relative; overflow: hidden;
+    padding: 120px 48px; text-align: center;
+    background-image: url('private-card.jpg');
+    background-size: cover;
+    background-position: center 40%;
+  }
+  .cta-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(50,20,5,0.85) 0%, rgba(20,40,50,0.85) 100%); }
+  .cta-content { position: relative; z-index: 2; }
+  .cta-label { font-size: 0.6rem; letter-spacing: 0.32em; text-transform: uppercase; color: var(--sunrise-gold); margin-bottom: 20px; }
+  .cta-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4.5vw, 3.8rem); font-weight: 300; line-height: 1.15; color: white; margin-bottom: 18px; }
+  .cta-sub { font-size: 0.9rem; line-height: 1.85; color: rgba(255,255,255,0.6); max-width: 480px; margin: 0 auto 44px; }
+  .cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .btn-gold { background: var(--gold); color: white; padding: 15px 36px; font-size: 0.66rem; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; transition: background 0.3s; }
+  .btn-gold:hover { background: var(--sunrise-gold); }
+  .btn-ghost-light { border: 1px solid rgba(255,255,255,0.4); color: rgba(255,255,255,0.85); padding: 15px 36px; font-size: 0.66rem; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; transition: all 0.3s; }
+  .btn-ghost-light:hover { background: rgba(255,255,255,0.1); }
+
+  /* FOOTER */
+  footer { background: #1a1008; padding: 68px 48px 38px; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.4fr; gap: 44px; max-width: 1100px; margin: 0 auto 44px; }
+  .footer-brand { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: white; margin-bottom: 8px; }
+  .footer-sub { font-size: 0.76rem; line-height: 1.8; color: rgba(255,255,255,0.28); max-width: 210px; margin-bottom: 16px; }
+  .footer-ig { font-size: 0.64rem; letter-spacing: 0.15em; color: #e8a040; text-decoration: none; }
+  .footer-h { font-size: 0.56rem; letter-spacing: 0.28em; text-transform: uppercase; color: #5aacaa; margin-bottom: 16px; }
+  .footer-nav { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .footer-nav a { font-size: 0.8rem; color: rgba(255,255,255,0.36); text-decoration: none; transition: color 0.3s; }
+  .footer-nav a:hover { color: #e8a040; }
+  .footer-contact { font-size: 0.78rem; line-height: 2.1; color: rgba(255,255,255,0.32); }
+  .footer-contact a { color: rgba(255,255,255,0.36); text-decoration: none; }
+  .footer-contact a:hover { color: #e8a040; }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 22px; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; font-size: 0.64rem; color: rgba(255,255,255,0.16); }
+
+  /* FADE */
+  .fade { opacity: 0; transform: translateY(24px); transition: opacity 0.85s ease, transform 0.85s ease; }
+  .fade.visible { opacity: 1; transform: translateY(0); }
+
+  /* RESPONSIVE */
+  @media (max-width: 960px) {
+    .nav-cta { display: none; }
+    .for-you-grid { grid-template-columns: 1fr !important; }
+    .nav-cta { display: none; }
+    nav { padding: 18px 22px; }
+    .nav-links { display: none; }
+    .hero-content { padding: 0 24px; }
+    .philosophy, .day-section, .ritual-section, .offerings, .seasons, .takeaway, .cta { padding: 68px 24px; }
+    footer { padding: 56px 24px 32px; }
+    .philosophy-grid, .offerings-grid { grid-template-columns: 1fr; }
+    .philosophy-quote { padding: 28px 24px; }
+    .questions { grid-template-columns: 1fr; }
+    .day-block { grid-template-columns: 1fr; }
+    .day-time { padding: 20px 24px; }
+    .seasons-grid, .takeaway-items { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
+  }
+  @media (max-width: 540px) {
+    .footer-grid { grid-template-columns: 1fr; }
+  }
+
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+  .hamburger span { display: block; width: 24px; height: 2px; background: var(--earth-dark); transition: all 0.3s; }
+  .mobile-menu { display: none; position: fixed; top: 73px; left: 0; right: 0; background: rgba(242,236,224,0.98); backdrop-filter: blur(16px); border-bottom: 1px solid var(--sand); z-index: 99; padding: 24px 28px; flex-direction: column; gap: 0; }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { font-size: 0.8rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--earth-mid); text-decoration: none; padding: 16px 0; border-bottom: 1px solid var(--sand); transition: color 0.3s; }
+  .mobile-menu a:last-child { border-bottom: none; }
+  .mobile-menu a:hover { color: var(--gold); }
+  @media (max-width: 960px) { .hamburger { display: flex; } .lang-switch { display: none; } }
+
+
+  .for-you-section { padding: 80px 48px; background: var(--earth-dark); }
+  .for-you-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
+  .for-you-yes { background: #3a2818; padding: 52px 44px; }
+  .for-you-no { background: #2a1e12; padding: 52px 44px; }
+  .for-you-label { font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase; margin-bottom: 24px; white-space: nowrap; }
+  .yes-label { color: var(--sunrise-gold); }
+  .no-label { color: var(--earth-light); }
+  @media (max-width: 960px) {
+    .for-you-section { padding: 60px 22px; }
+    .for-you-grid { grid-template-columns: 1fr; }
+    .for-you-yes, .for-you-no { padding: 40px 28px; }
+  }
+
+
+  .nav-labyrinth { height: 28px; width: auto; display: inline-block; vertical-align: middle; margin-right: 8px; opacity: 0.9; transition: opacity 0.3s; }
+  nav.scrolled .nav-labyrinth { content: url('labyrinth-gold.png'); }
+  .footer-labyrinth { height: 24px; width: auto; display: inline-block; vertical-align: middle; margin-right: 8px; opacity: 0.7; }
+
+  .mobile-menu-divider { border: none; border-top: 1px solid var(--sand); margin: 8px 0; }
+  .mobile-lang-switch { display: flex; gap: 16px; padding: 14px 0; }
+  .mobile-lang-switch a { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--earth-light); text-decoration: none; transition: color 0.3s; }
+  .mobile-lang-switch a.active, .mobile-lang-switch a:hover { color: var(--gold); }
+</style>
+  <link rel="alternate" hreflang="en" href="https://ilsentiero.world/retreats.html">
+  <link rel="alternate" hreflang="nl" href="https://ilsentiero.world/nl/retreats.html">
+  <link rel="alternate" hreflang="it" href="https://ilsentiero.world/it/retreats.html">
+  <link rel="alternate" hreflang="x-default" href="https://ilsentiero.world/retreats.html">
+  <meta property="og:title" content="Retreats · Il Sentiero · Salento">
+  <meta property="og:description" content="Private and group retreats in Salento, Puglia. Five days minimum. The work. The path. The place.">
+  <meta property="og:url" content="https://ilsentiero.world/retreats.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://ilsentiero.world/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://ilsentiero.world/og-image.jpg">
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo"><img src="labyrinth-gold.png" alt="Il Sentiero labyrinth symbol" class="nav-labyrinth"> Il Sentiero</a>
+  <ul class="nav-links">
+    <li><a href="about.html">Nikita</a></li>
+    <li><a href="retreats.html" class="active">Retreats</a></li>
+    <li><a href="journal.html">Journal</a></li>
+    <li><a href="connect.html">Connect</a></li>
+  </ul>
+  <div class="nav-right"><div class="lang-switch"><a href="../index.html">EN</a><span>·</span><a href="../nl/retreats.html">NL</a><span>·</span><a href="../it/retreats.html">IT</a></div><a href="connect.html" class="nav-cta">Begin with a call</a>
+  <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="about.html">Nikita</a><a href="retreats.html">Retreats</a><a href="journal.html">Journal</a><a href="connect.html">Connect</a>
+  <hr class="mobile-menu-divider">
+  <div class="mobile-lang-switch"><a href="retreats.html" class="active">EN</a><a href="nl/retreats.html">NL</a><a href="it/retreats.html">IT</a></div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-photo"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Sanctuary & Retreats · Salento, Puglia</p>
+    <h1 class="hero-title">A path.<br>Not a <em>program.</em></h1>
+    <p class="hero-sub">Every retreat is built around you — your energy, your pace, your readiness to go deep.</p>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="philosophy">
+  <div class="container">
+    <div class="philosophy-grid">
+      <div class="fade">
+        <p class="section-label">The foundation</p>
+        <h2 class="section-heading">Structure as a riverbank.</h2>
+        <div class="philosophy-text">
+          <p>Il Sentiero was born from a simple but profound realisation: you cannot receive healing if you are never still.</p>
+          <p>For years I worked intuitively with people — tuning into their energy, following the flow, being fully present. And I gave everything. Sometimes too much. It took hosting my first private retreats to understand that sustainable depth requires structure. Not rigid schedules. A gentle container.</p>
+          <p>A riverbank that gives the water direction without controlling where it flows. That is what Il Sentiero is. A path. Not a program.</p>
+        </div>
+      </div>
+      <div class="philosophy-quote fade">
+        "You cannot receive healing<br>if you are <em>never still.</em>"
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- A DAY -->
+<section class="day-section">
+  <div class="container">
+    <p class="section-label fade">The rhythm</p>
+    <h2 class="section-heading fade">A day at Il Sentiero.</h2>
+    <div class="day-intro fade">
+      <p>Each day has a natural rhythm that creates the conditions for real transformation to happen. This is not a schedule — it is a container. Within it, everything is alive and responsive to you.</p>
+    </div>
+    <div class="day-blocks fade">
+      <div class="day-block">
+        <div class="day-time">
+          <p class="day-time-label">Early morning</p>
+          <p class="day-time-text">Before we meet</p>
+        </div>
+        <div class="day-content">
+          <h3>I tend to my own practice.</h3>
+          <p>Before our day begins, I arrive to the work grounded and present. I can only hold space as well as I hold myself. This is not a small thing — it is the foundation of everything.</p>
+        </div>
+      </div>
+      <div class="day-block">
+        <div class="day-time">
+          <p class="day-time-label">Morning</p>
+          <p class="day-time-text">The ritual</p>
+        </div>
+        <div class="day-content">
+          <h3>We begin together in silence.</h3>
+          <p>After breakfast, we gather. A candle. Oracle cards. Your journal. We breathe together, slow down, and open the day with three questions. You write. You keep everything you write. By the end of the retreat, you leave with a full record of your own inner journey.</p>
+        </div>
+      </div>
+      <div class="day-block">
+        <div class="day-time">
+          <p class="day-time-label">Late morning</p>
+          <p class="day-time-text">Into nature</p>
+        </div>
+        <div class="day-content">
+          <h3>We go out — together.</h3>
+          <p>Into the land, into the village, wherever feels right. The wild coastline, the olive groves, the sea. The connection with nature is a big part of this journey. Once we open ourselves to this land, we remember how supported we are by the elements around us.</p>
+        </div>
+      </div>
+      <div class="day-block">
+        <div class="day-time">
+          <p class="day-time-label">Midday</p>
+          <p class="day-time-text">Lunch</p>
+        </div>
+        <div class="day-content">
+          <h3>Long and unhurried.</h3>
+          <p>This too is part of the work. Sitting together, eating slowly, letting the morning settle. There is nothing to rush toward. This is the retreat.</p>
+        </div>
+      </div>
+      <div class="day-block">
+        <div class="day-time">
+          <p class="day-time-label">Afternoon</p>
+          <p class="day-time-text">Alone time</p>
+        </div>
+        <div class="day-content">
+          <h3>This is not empty time.</h3>
+          <p>After lunch, we each take time alone. Space to integrate, to rest, to simply be. This is intentional — this is the retreat working. What moves in the morning continues moving in the silence of the afternoon.</p>
+        </div>
+      </div>
+      <div class="day-block">
+        <div class="day-time">
+          <p class="day-time-label">Late afternoon</p>
+          <p class="day-time-text">The work</p>
+        </div>
+        <div class="day-content">
+          <h3>Whatever is needed.</h3>
+          <p>A deeper therapeutic session, a walk, a visit to one of my trusted practitioner friends in the area, or simply being. In the morning ritual, we sense together what the day is calling for. The afternoon answers that call.</p>
+        </div>
+      </div>
+      <div class="day-block">
+        <div class="day-time">
+          <p class="day-time-label">Evening · Fire</p>
+          <p class="day-time-text">The fire</p>
+        </div>
+        <div class="day-content">
+          <h3>The fire changes everything.</h3>
+          <p>There is no agenda around the fire. No method. You sit. The flames move. The waves are always there in the background. And something in you — slowly, quietly — begins to soften.</p>
+          <p>Fire has a way of doing what words cannot. It makes people honest. It makes people still. In that stillness, what has been waiting inside you finally has room to rise.</p>
+          <p>Sometimes we light it in the evening. Sometimes in the afternoon, just because the moment calls for it. There is no rule. Only the fire, the sea, and whatever needs to come up. On a clear night, the full moon above — or a new moon, and every star visible.</p>
+        </div>
+      </div>
+      <div class="day-block">
+        <div class="day-time">
+          <p class="day-time-label">Evening</p>
+          <p class="day-time-text">By 9pm</p>
+        </div>
+        <div class="day-content">
+          <h3>The day closes gently.</h3>
+          <p>A light meal, slow conversation, maybe the sunset over the Adriatic. By 9pm, the day is yours. Rest is part of the work too. Tomorrow begins again — fresh, unhurried, present.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- PHOTO BREAK - Turquoise bay -->
+<div style="position:relative;height:50vh;min-height:360px;overflow:hidden">
+  <img src="nikita-walking-rocks.jpg" alt="Sunset over the Adriatic sea from Il Sentiero, Salento, with the little island in front"
+    style="width:100%;height:100%;object-fit:cover;object-position:center 40%;display:block">
+  <div style="position:absolute;inset:0;background:rgba(10,6,2,0.15)"></div>
+</div>
+
+<!-- MORNING RITUAL QUESTIONS -->
+<section class="ritual-section">
+  <div class="container">
+    <div class="ritual-header fade">
+      <p class="section-label">The morning ritual</p>
+      <h2>Three questions.<br>Every morning.</h2>
+      <p>These are not therapy questions. They are not performance questions. They are invitations — to arrive, to listen, to give yourself permission.</p>
+    </div>
+    <div class="questions fade">
+      <div class="question">
+        <p class="question-n">01</p>
+        <p class="question-text">"How do you arrive this morning?"</p>
+        <p class="question-note">In three words. No more. Not a story — just three words. This trains presence from the very first moment.</p>
+      </div>
+      <div class="question">
+        <p class="question-n">02</p>
+        <p class="question-text">"What is asking for your attention today?"</p>
+        <p class="question-note">Not what you want to work on. What is asking. The body, the emotion, the thing underneath — invited to speak.</p>
+      </div>
+      <div class="question">
+        <p class="question-n">03</p>
+        <p class="question-text">"What would feel like a gift to yourself today?"</p>
+        <p class="question-note">Quietly radical for people who overgive. A seed of self-permission planted at the start of every day.</p>
+      </div>
+    </div>
+    <div class="question-fourth fade">
+      <p>+ A fourth, rotating question — or an oracle card. Whatever the day is calling for.</p>
+    </div>
+  </div>
+</section>
+
+<!-- THIS IS FOR YOU -->
+<section class="for-you-section">
+  <div class="container">
+    <div class="for-you-grid">
+      <div class="for-you-yes">
+        <p class="for-you-label yes-label">This is for you if</p>
+        <div style="display:flex;flex-direction:column;gap:20px">
+          <div style="display:flex;gap:16px;align-items:start">
+            <span style="color:var(--sunrise-gold);margin-top:4px;font-size:0.7rem">◆</span>
+            <p style="font-size:0.9rem;line-height:1.85;color:rgba(255,255,255,0.75)">You feel something is missing — even though from the outside, everything looks fine.</p>
+          </div>
+          <div style="display:flex;gap:16px;align-items:start">
+            <span style="color:var(--sunrise-gold);margin-top:4px;font-size:0.7rem">◆</span>
+            <p style="font-size:0.9rem;line-height:1.85;color:rgba(255,255,255,0.75)">You are ready to make a real change — not one day, not when the time is right. Now.</p>
+          </div>
+          <div style="display:flex;gap:16px;align-items:start">
+            <span style="color:var(--sunrise-gold);margin-top:4px;font-size:0.7rem">◆</span>
+            <p style="font-size:0.9rem;line-height:1.85;color:rgba(255,255,255,0.75)">You are willing to be honest — with yourself and with me. Even when it is uncomfortable.</p>
+          </div>
+          <div style="display:flex;gap:16px;align-items:start">
+            <span style="color:var(--sunrise-gold);margin-top:4px;font-size:0.7rem">◆</span>
+            <p style="font-size:0.9rem;line-height:1.85;color:rgba(255,255,255,0.75)">You feel the call of this land — the sea, the silence, the slowness. Something in you already says yes.</p>
+          </div>
+          <div style="display:flex;gap:16px;align-items:start">
+            <span style="color:var(--sunrise-gold);margin-top:4px;font-size:0.7rem">◆</span>
+            <p style="font-size:0.9rem;line-height:1.85;color:rgba(255,255,255,0.75)">You have everything the world says you should want — and you still feel empty. That emptiness brought you here.</p>
+          </div>
+        </div>
+      </div>
+      <div class="for-you-no">
+        <p class="for-you-label no-label">This is not for you if</p>
+        <div style="display:flex;flex-direction:column;gap:20px">
+          <div style="display:flex;gap:16px;align-items:start">
+            <span style="color:var(--earth-light);margin-top:4px;font-size:0.7rem">—</span>
+            <p style="font-size:0.9rem;line-height:1.85;color:rgba(255,255,255,0.45)">You are waiting for the perfect moment. There is no perfect moment.</p>
+          </div>
+          <div style="display:flex;gap:16px;align-items:start">
+            <span style="color:var(--earth-light);margin-top:4px;font-size:0.7rem">—</span>
+            <p style="font-size:0.9rem;line-height:1.85;color:rgba(255,255,255,0.45)">You want someone to fix you, tell you what to do, or give you all the answers.</p>
+          </div>
+          <div style="display:flex;gap:16px;align-items:start">
+            <span style="color:var(--earth-light);margin-top:4px;font-size:0.7rem">—</span>
+            <p style="font-size:0.9rem;line-height:1.85;color:rgba(255,255,255,0.45)">You are not truly ready to look at what has been holding you back.</p>
+          </div>
+          <div style="display:flex;gap:16px;align-items:start">
+            <span style="color:var(--earth-light);margin-top:4px;font-size:0.7rem">—</span>
+            <p style="font-size:0.9rem;line-height:1.85;color:rgba(255,255,255,0.45)">You are looking for a holiday with some wellness on the side. This is not that.</p>
+          </div>
+          <div style="display:flex;gap:16px;align-items:start">
+            <span style="color:var(--earth-light);margin-top:4px;font-size:0.7rem">—</span>
+            <p style="font-size:0.9rem;line-height:1.85;color:rgba(255,255,255,0.45)">You keep making excuses for why now is not the right time. I am not the right guide for that.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFFERINGS -->
+<section class="offerings">
+  <div class="container">
+    <p class="section-label fade">Ways to come</p>
+    <h2 class="section-heading fade">Choose your path.</h2>
+    <div class="offerings-grid fade">
+      <div class="offering warm">
+        <p class="offering-tag warm">Solo · Private retreat</p>
+        <h3>A private and deeply personal journey.</h3>
+        <p>Fully tailored to you — your story, your rhythm, your readiness. This is the most intimate container Il Sentiero offers. Everything is shaped around where you are and where you want to go.</p>
+        <p>We begin with a phone call. From there, we design the retreat together.</p>
+        <div class="offering-includes">
+          <p class="offering-includes-label">Includes</p>
+          <ul>
+            <li>Accommodation at Il Sentiero</li>
+            <li>All meals — slow and nourishing</li>
+            <li>Daily morning ritual & journaling</li>
+            <li>Personal therapeutic sessions with Nikita</li>
+            <li>Nature walks & somatic practices</li>
+            <li>Access to trusted local practitioners</li>
+            <li>Your full retreat journal to take home</li>
+          </ul>
+        </div>
+        <a href="connect.html" class="offering-link warm">Begin with a call</a>
+      </div>
+      <div class="offering cool">
+        <p class="offering-tag cool">Duo · For two</p>
+        <h3>For two people ready to walk together.</h3>
+        <p>Partners, friends, or two people who feel called to share this experience. The same depth, the same structure — with the added dimension of witnessing each other's journey.</p>
+        <p>Some things are easier to move when someone who knows you is beside you.</p>
+        <div class="offering-includes">
+          <p class="offering-includes-label">Includes</p>
+          <ul>
+            <li>Shared accommodation at Il Sentiero</li>
+            <li>All meals together</li>
+            <li>Daily morning ritual for both</li>
+            <li>Individual and shared sessions with Nikita</li>
+            <li>Nature walks & shared practice</li>
+            <li>Solo integration time each afternoon</li>
+            <li>Two full retreat journals to take home</li>
+          </ul>
+        </div>
+        <a href="connect.html" class="offering-link cool">Begin with a call</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO BREAK - The path together -->
+<div style="position:relative;height:50vh;min-height:360px;overflow:hidden">
+  <img src="path-together.jpg" alt="Stone path through Salento scrubland leading toward the sea and horizon"
+    style="width:100%;height:100%;object-fit:cover;object-position:center center;display:block">
+  <div style="position:absolute;inset:0;background:rgba(10,6,2,0.10)"></div>
+</div>
+
+<!-- SEASONS -->
+<section class="seasons">
+  <div class="container">
+    <p class="section-label fade">When to come</p>
+    <h2 class="section-heading fade">The land sets the rhythm.</h2>
+    <div class="seasons-grid fade">
+      <div class="season">
+        <div class="season-dot dot-spring"></div>
+        <p class="season-period">Now → 6 June 2026</p>
+        <p class="season-name">The Retreats</p>
+        <p class="season-desc">Spring in Salento. The sea is cool and clear, the olive groves are green, the days are long. A few spaces still open — reach out to check availability.</p>
+      </div>
+      <div class="season">
+        <div class="season-dot dot-still"></div>
+        <p class="season-period">Mid July → End of August</p>
+        <p class="season-name">The Still Season</p>
+        <p class="season-desc">The heat calls for slowness. Come and stay — a room, slow mornings, sea swims, gentle practice. Not a full retreat. A different kind of arrival.</p>
+      </div>
+      <div class="season">
+        <div class="season-dot dot-return"></div>
+        <p class="season-period">End of August → Mid November</p>
+        <p class="season-name">The Return</p>
+        <p class="season-desc">Autumn is the most potent season here. The land cools, the crowds leave, and the real work becomes possible again. Retreats resume in full.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU TAKE HOME -->
+<section class="takeaway">
+  <div class="takeaway-inner fade">
+    <p class="section-label">What you leave with</p>
+    <h2>Not just a memory.</h2>
+    <p>A retreat at Il Sentiero gives you something to carry forward — not just an experience, but a real shift. Something that continues working in you long after you leave.</p>
+    <div class="takeaway-items">
+      <div class="takeaway-item">
+        <h4>Your full journal</h4>
+        <p>Every morning ritual, every question, every answer. A written record of your own inner journey — yours to keep and return to.</p>
+      </div>
+      <div class="takeaway-item">
+        <h4>Real tools</h4>
+        <p>Practices for your nervous system, your body, your daily life. Things you can use when you're back home and the noise returns.</p>
+      </div>
+      <div class="takeaway-item">
+        <h4>A relationship with your stillness</h4>
+        <p>The most important thing. A direct experience of the point inside you where nothing exists and everything exists. You will know how to find it again.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-overlay"></div>
+  <div class="cta-content">
+    <p class="cta-label fade">Ready to begin</p>
+    <h2 class="cta-title fade">Take a moment to<br>tune into yourself.</h2>
+    <p class="cta-sub fade">If something in you recognises this — if something is saying yes — reach out. Every journey at Il Sentiero begins with a phone call.</p>
+    <div class="cta-btns fade">
+      <a href="connect.html" class="btn-gold">Begin with a call</a>
+      <a href="about.html" class="btn-ghost-light">Meet Nikita</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <p class="footer-brand"><img src="labyrinth-white.png" alt="Il Sentiero" class="footer-labyrinth"> Il Sentiero</p>
+      <p class="footer-sub">Sanctuary between Land & Sea.<br>Held by Nikita · Salento, Southern Italy.</p>
+      <a href="https://www.instagram.com/wild.woman.nikita" target="_blank" class="footer-ig">@wild.woman.nikita</a>
+    </div>
+    <div>
+      <p class="footer-h">Navigate</p>
+      <ul class="footer-nav">
+        <li><a href="about.html">Nikita</a></li>
+        <li><a href="retreats.html">Retreats</a></li>
+        <li><a href="journal.html">Journal</a></li>
+        <li><a href="connect.html">Connect</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-h">Season</p>
+      <ul class="footer-nav">
+        <li><a href="retreats.html">Spring retreats open</a></li>
+        <li><a href="retreats.html">The Still Season · July–Aug</a></li>
+        <li><a href="retreats.html">Autumn retreats · Aug–Nov</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-h">Contact</p>
+      <div class="footer-contact">
+        Via Vittorio Bottego 100<br>
+        73039 Tricase Porto, Puglia<br>
+        <a href="tel:+31638739760">NL +31 6 3873 9760</a><br>
+        <a href="tel:+393339261696">IT +39 333 926 1696</a><br>
+        <a href="mailto:nsjaspers@gmail.com">nsjaspers@gmail.com</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Il Sentiero · Nikita Jaspers</span>
+    <span>Salento · Puglia · Italy</span>
+  </div>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(el => { if (el.isIntersecting) el.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade').forEach(el => obs.observe(el));
+
+  // Hamburger menu
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  if (hamburger) {
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+    });
+    document.addEventListener('click', (e) => {
+      if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+        mobileMenu.classList.remove('open');
+      }
+    });
+  }
+
+</script>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
+</body>
+</html>

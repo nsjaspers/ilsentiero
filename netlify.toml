@@ -1,0 +1,8 @@
+[build]
+  publish = "."
+
+[[plugins]]
+  package = "@netlify/plugin-sitemap"
+
+[template.environment]
+  NETLIFY_USE_YARN = "false"

@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Journal · Il Sentiero · Sanctuary & Retreats in Salento, Puglia</title>
+<meta name="description" content="Letters from the sanctuary. Writing by Nikita — on presence, the path, nature, and the journey back to yourself. Il Sentiero, Salento, Puglia.">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Outfit:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --limestone: #f2ece0;
+    --sand: #e8dcc8;
+    --parchment: #f7f2e8;
+    --warm-white: #faf7f2;
+    --sunrise-gold: #e8a040;
+    --sea-mid: #3d8a8a;
+    --sea-aqua: #5aacaa;
+    --earth-dark: #2e2318;
+    --earth: #4a3828;
+    --earth-mid: #7a6048;
+    --earth-light: #a88868;
+    --gold: #c8902a;
+    --gold-light: #e0b84a;
+    --olive: #5a6848;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--warm-white); color: var(--earth-dark); font-family: 'Outfit', sans-serif; font-weight: 300; overflow-x: hidden; }
+
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 24px 48px; display: flex; align-items: center; justify-content: space-between; background: rgba(242,236,224,0.96); backdrop-filter: blur(16px); border-bottom: 1px solid var(--sand); }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; letter-spacing: 0.1em; color: var(--earth-dark); text-decoration: none; }
+  .nav-left { display: flex; align-items: center; gap: 48px; }
+  .nav-links { display: flex; gap: 36px; list-style: none; }
+  .nav-links a { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--earth-mid); text-decoration: none; transition: color 0.3s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+  .nav-right { display: flex; align-items: center; gap: 20px; }
+  .lang-switch { display: flex; gap: 6px; align-items: center; }
+  .lang-switch a { font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--earth-light); text-decoration: none; transition: color 0.3s; }
+  .lang-switch a.active, .lang-switch a:hover { color: var(--gold); }
+  .lang-switch span { color: var(--sand); font-size: 0.5rem; }
+  .nav-cta { font-size: 0.66rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--earth); border: 1px solid var(--earth-light); padding: 10px 22px; text-decoration: none; transition: all 0.3s; }
+  .nav-cta:hover { background: var(--gold); border-color: var(--gold); color: white; }
+
+  /* HERO */
+  .hero {
+    height: 65vh;
+    min-height: 480px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    margin-top: 73px;
+  }
+  .hero-photo { position: absolute; inset: 0; background-image: url('journal-hero.jpg'); background-size: cover; background-position: center 40%; }
+  .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,6,2,0.45) 0%, rgba(10,6,2,0.35) 50%, rgba(10,6,2,0.7) 100%); }
+  .hero-content { position: relative; z-index: 2; padding: 0 48px; max-width: 720px; }
+  .hero-eyebrow { font-size: 0.62rem; letter-spacing: 0.32em; text-transform: uppercase; color: var(--sunrise-gold); margin-bottom: 20px; }
+  .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 7vw, 5.5rem); font-weight: 300; line-height: 1.05; color: white; margin-bottom: 20px; }
+  .hero-title em { font-style: italic; color: var(--sunrise-gold); }
+  .hero-sub { font-size: 0.9rem; line-height: 1.85; color: rgba(255,255,255,0.7); max-width: 480px; margin: 0 auto; }
+
+  /* NEWSLETTER */
+  .newsletter { background: var(--limestone); padding: 72px 48px; text-align: center; border-bottom: 1px solid var(--sand); }
+  .newsletter-inner { max-width: 560px; margin: 0 auto; }
+  .newsletter h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 300; color: var(--earth-dark); margin-bottom: 12px; }
+  .newsletter p { font-size: 0.88rem; line-height: 1.85; color: var(--earth-mid); margin-bottom: 32px; }
+  .newsletter-form { display: flex; gap: 0; max-width: 440px; margin: 0 auto; }
+  .newsletter-form input {
+    flex: 1;
+    background: var(--warm-white);
+    border: 1px solid var(--sand);
+    border-right: none;
+    padding: 14px 18px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.88rem;
+    color: var(--earth-dark);
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  .newsletter-form input:focus { border-color: var(--sunrise-gold); }
+  .newsletter-form input::placeholder { color: var(--earth-light); }
+  .newsletter-form button {
+    background: var(--gold);
+    color: white;
+    border: none;
+    padding: 14px 24px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.66rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.3s;
+    white-space: nowrap;
+  }
+  .newsletter-form button:hover { background: var(--sunrise-gold); }
+
+  /* THEMES */
+  .themes { padding: 64px 48px; background: var(--warm-white); border-bottom: 1px solid var(--sand); }
+  .themes-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+  .themes-label { font-size: 0.6rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--earth-light); margin-right: 8px; }
+  .theme-tag {
+    font-size: 0.68rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--earth-mid);
+    padding: 8px 18px;
+    border: 1px solid var(--sand);
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+  }
+  .theme-tag:hover, .theme-tag.active { background: var(--earth-dark); color: var(--sunrise-gold); border-color: var(--earth-dark); }
+
+  /* FEATURED LETTER */
+  .featured { padding: 96px 48px; background: var(--warm-white); }
+  .featured-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+  .featured-image { position: relative; overflow: hidden; aspect-ratio: 4/3; }
+  .featured-image img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; transition: transform 0.6s ease; }
+  .featured-image:hover img { transform: scale(1.03); }
+  .featured-tag { font-size: 0.58rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--sunrise-gold); margin-bottom: 16px; }
+  .featured-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 300; line-height: 1.2; color: var(--earth-dark); margin-bottom: 20px; }
+  .featured-excerpt { font-size: 0.9rem; line-height: 1.9; color: var(--earth-mid); margin-bottom: 28px; }
+  .featured-link { font-size: 0.66rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--earth-dark); text-decoration: none; border-bottom: 1px solid var(--gold); padding-bottom: 3px; transition: color 0.3s; }
+  .featured-link:hover { color: var(--gold); }
+
+  /* LETTERS GRID */
+  .letters { padding: 0 48px 96px; background: var(--warm-white); }
+  .letters-inner { max-width: 1100px; margin: 0 auto; }
+  .letters-heading { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.4rem, 2.5vw, 2rem); font-weight: 300; color: var(--earth-dark); margin-bottom: 40px; padding-top: 16px; border-top: 1px solid var(--sand); }
+  .letters-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  .letter-card { position: relative; overflow: hidden; background: var(--limestone); transition: background 0.3s; }
+  .letter-card:hover { background: var(--sand); }
+  .letter-card-image { position: relative; overflow: hidden; aspect-ratio: 4/3; }
+  .letter-card-image img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; transition: transform 0.6s ease; }
+  .letter-card:hover .letter-card-image img { transform: scale(1.04); }
+  .letter-card-body { padding: 28px 28px 32px; }
+  .letter-card-tag { font-size: 0.56rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--sea-mid); margin-bottom: 10px; }
+  .letter-card-title { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 400; color: var(--earth-dark); line-height: 1.3; margin-bottom: 10px; }
+  .letter-card-excerpt { font-size: 0.8rem; line-height: 1.75; color: var(--earth-mid); }
+  .coming-soon { display: inline-block; margin-top: 14px; font-size: 0.58rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--earth-light); }
+
+  /* CLOSING */
+  .closing { background: var(--earth-dark); padding: 96px 48px; text-align: center; }
+  .closing-quote { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.4rem, 3vw, 2.2rem); font-weight: 300; font-style: italic; line-height: 1.65; color: white; max-width: 720px; margin: 0 auto 20px; }
+  .closing-quote em { color: var(--sunrise-gold); font-style: normal; }
+  .closing-attr { font-size: 0.62rem; letter-spacing: 0.28em; text-transform: uppercase; color: rgba(255,255,255,0.3); }
+
+  /* FOOTER */
+  footer { background: #1a1008; padding: 68px 48px 38px; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.4fr; gap: 44px; max-width: 1100px; margin: 0 auto 44px; }
+  .footer-brand { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: white; margin-bottom: 8px; }
+  .footer-sub { font-size: 0.76rem; line-height: 1.8; color: rgba(255,255,255,0.28); max-width: 210px; margin-bottom: 16px; }
+  .footer-ig { font-size: 0.64rem; letter-spacing: 0.15em; color: #e8a040; text-decoration: none; }
+  .footer-h { font-size: 0.56rem; letter-spacing: 0.28em; text-transform: uppercase; color: #5aacaa; margin-bottom: 16px; }
+  .footer-nav { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .footer-nav a { font-size: 0.8rem; color: rgba(255,255,255,0.36); text-decoration: none; transition: color 0.3s; }
+  .footer-nav a:hover { color: #e8a040; }
+  .footer-contact { font-size: 0.78rem; line-height: 2.1; color: rgba(255,255,255,0.32); }
+  .footer-contact a { color: rgba(255,255,255,0.36); text-decoration: none; }
+  .footer-contact a:hover { color: #e8a040; }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 22px; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; font-size: 0.64rem; color: rgba(255,255,255,0.16); }
+
+  /* FADE */
+  .fade { opacity: 0; transform: translateY(24px); transition: opacity 0.85s ease, transform 0.85s ease; }
+  .fade.visible { opacity: 1; transform: translateY(0); }
+
+  /* RESPONSIVE */
+  @media (max-width: 960px) {
+    .nav-cta { display: none; }
+    nav { padding: 18px 22px; }
+    .nav-links { display: none; }
+    .hero { padding: 0; }
+    .hero-content { padding: 0 24px; }
+    .newsletter, .themes, .featured, .letters, .closing { padding-left: 24px; padding-right: 24px; }
+    .featured-inner { grid-template-columns: 1fr; gap: 36px; }
+    .letters-grid { grid-template-columns: 1fr 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
+    footer { padding: 56px 24px 32px; }
+  }
+  @media (max-width: 540px) {
+    .letters-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .newsletter-form { flex-direction: column; }
+    .newsletter-form input { border-right: 1px solid var(--sand); border-bottom: none; }
+    .newsletter-form button { width: 100%; }
+  }
+
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+  .hamburger span { display: block; width: 24px; height: 2px; background: var(--earth-dark); transition: all 0.3s; }
+  .mobile-menu { display: none; position: fixed; top: 73px; left: 0; right: 0; background: rgba(242,236,224,0.98); backdrop-filter: blur(16px); border-bottom: 1px solid var(--sand); z-index: 99; padding: 24px 28px; flex-direction: column; gap: 0; }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { font-size: 0.8rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--earth-mid); text-decoration: none; padding: 16px 0; border-bottom: 1px solid var(--sand); transition: color 0.3s; }
+  .mobile-menu a:last-child { border-bottom: none; }
+  .mobile-menu a:hover { color: var(--gold); }
+  @media (max-width: 960px) { .hamburger { display: flex; } .lang-switch { display: none; } }
+
+
+  .nav-labyrinth { height: 28px; width: auto; display: inline-block; vertical-align: middle; margin-right: 8px; opacity: 0.9; transition: opacity 0.3s; }
+  nav.scrolled .nav-labyrinth { content: url('labyrinth-gold.png'); }
+  .footer-labyrinth { height: 24px; width: auto; display: inline-block; vertical-align: middle; margin-right: 8px; opacity: 0.7; }
+
+  .mobile-menu-divider { border: none; border-top: 1px solid var(--sand); margin: 8px 0; }
+  .mobile-lang-switch { display: flex; gap: 16px; padding: 14px 0; }
+  .mobile-lang-switch a { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--earth-light); text-decoration: none; transition: color 0.3s; }
+  .mobile-lang-switch a.active, .mobile-lang-switch a:hover { color: var(--gold); }
+</style>
+  <link rel="alternate" hreflang="en" href="https://ilsentiero.world/journal.html">
+  <link rel="alternate" hreflang="nl" href="https://ilsentiero.world/nl/journal.html">
+  <link rel="alternate" hreflang="it" href="https://ilsentiero.world/it/journal.html">
+  <link rel="alternate" hreflang="x-default" href="https://ilsentiero.world/journal.html">
+  <meta property="og:title" content="Journal · Il Sentiero · Salento">
+  <meta property="og:description" content="Letters from the path. Real stories from life at Il Sentiero Sanctuary & Retreats in Salento.">
+  <meta property="og:url" content="https://ilsentiero.world/journal.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://ilsentiero.world/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://ilsentiero.world/og-image.jpg">
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-left">
+    <a href="index.html" class="nav-logo"><img src="labyrinth-gold.png" alt="Il Sentiero labyrinth symbol" class="nav-labyrinth"> Il Sentiero</a>
+    <ul class="nav-links">
+      <li><a href="about.html">Nikita</a></li>
+      <li><a href="retreats.html">Retreats</a></li>
+      <li><a href="journal.html" class="active">Journal</a></li>
+      <li><a href="connect.html">Connect</a></li>
+    </ul>
+  </div>
+  <div class="nav-right">
+    <div class="lang-switch">
+      <a href="journal.html" class="active">EN</a>
+      <span>·</span>
+      <a href="nl/journal.html">NL</a>
+      <span>·</span>
+      <a href="it/journal.html">IT</a>
+    </div>
+    <a href="connect.html" class="nav-cta">Begin with a call</a>
+  <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="about.html">Nikita</a><a href="retreats.html">Retreats</a><a href="journal.html">Journal</a><a href="connect.html">Connect</a>
+  <hr class="mobile-menu-divider">
+  <div class="mobile-lang-switch"><a href="journal.html" class="active">EN</a><a href="nl/journal.html">NL</a><a href="it/journal.html">IT</a></div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-photo"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Letters from the Sanctuary</p>
+    <h1 class="hero-title">Writing from<br><em>the path.</em></h1>
+    <p class="hero-sub">Honest letters on presence, nature, the journey inward, and what it means to live close to the Land & Sea.</p>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<div class="newsletter fade">
+  <div class="newsletter-inner">
+    <h2>A slow newsletter.</h2>
+    <p>Not often. Not rushed. When something is ready to be shared — a letter arrives in your inbox. No noise. Just words from the sanctuary, when they are ready.</p>
+    <form class="newsletter-form" action="https://formspree.io/f/xbdwbnqr" method="POST">
+      <input type="email" name="email" placeholder="Your email address" required>
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+</div>
+
+<!-- THEMES -->
+<div class="themes">
+  <div class="themes-inner">
+    <span class="themes-label">Themes</span>
+    <a href="#" class="theme-tag active">All</a>
+    <a href="#" class="theme-tag">Presence</a>
+    <a href="#" class="theme-tag">The Path</a>
+    <a href="#" class="theme-tag">Nature</a>
+    <a href="#" class="theme-tag">The Sanctuary</a>
+    <a href="#" class="theme-tag">Travel</a>
+  </div>
+</div>
+
+<!-- FEATURED LETTER -->
+<section class="featured">
+  <div class="featured-inner">
+    <div class="featured-image fade">
+      <img src="journal-portrait.jpg" alt="Nikita in golden morning light in nature, Salento" loading="lazy">
+    </div>
+    <div class="fade">
+      <p class="featured-tag">Featured · Presence</p>
+      <h2 class="featured-title">On Saying Yes<br>to the Journey.</h2>
+      <p class="featured-excerpt">There is a moment — just before you say yes to something that scares you — where everything goes quiet. Your mind makes its arguments. Your Heart already knows the answer. This letter is about learning to trust that knowing. About what happens when you stop waiting for the right moment and simply go.</p>
+      <p class="featured-excerpt">Coming soon — Nikita is writing.</p>
+      <a href="connect.html" class="featured-link">Reach out in the meantime →</a>
+    </div>
+  </div>
+</section>
+
+<!-- LETTERS GRID -->
+<section class="letters">
+  <div class="letters-inner">
+    <h2 class="letters-heading fade">More letters — coming.</h2>
+    <div class="letters-grid fade">
+
+      <div class="letter-card">
+        <div class="letter-card-image">
+          <img src="journal-desert.jpg" alt="Nikita sitting on top of a jeep in the Moroccan desert" loading="lazy">
+        </div>
+        <div class="letter-card-body">
+          <p class="letter-card-tag">Travel · The Path</p>
+          <h3 class="letter-card-title">A Year in the Desert. What the Sand Taught Me.</h3>
+          <p class="letter-card-excerpt">On arriving somewhere for a week and staying for a year. On living with your feet in the sand. On missing the water so much it tells you something.</p>
+          <span class="coming-soon">Coming soon</span>
+        </div>
+      </div>
+
+      <div class="letter-card">
+        <div class="letter-card-image">
+          <img src="journal-asia.jpg" alt="Nikita sitting by a waterfall in the Asian jungle" loading="lazy">
+        </div>
+        <div class="letter-card-body">
+          <p class="letter-card-tag">Travel · Nature</p>
+          <h3 class="letter-card-title">Going to Asia to Feel Safe. What I Found Instead.</h3>
+          <p class="letter-card-excerpt">I went with an intention. The jungle had other ideas. On what happens when you travel to find yourself and realise you were never lost.</p>
+          <span class="coming-soon">Coming soon</span>
+        </div>
+      </div>
+
+      <div class="letter-card">
+        <div class="letter-card-image">
+          <img src="journal-flower.jpg" alt="Nikita smelling a white wildflower in a Salento meadow" loading="lazy">
+        </div>
+        <div class="letter-card-body">
+          <p class="letter-card-tag">Presence · Nature</p>
+          <h3 class="letter-card-title">Slowing Down Enough to Smell the Flowers.</h3>
+          <p class="letter-card-excerpt">Presence is not a concept. It is a practice. It begins with noticing what is right in front of you — the wildflowers, the light, the sound of the sea.</p>
+          <span class="coming-soon">Coming soon</span>
+        </div>
+      </div>
+
+      <div class="letter-card">
+        <div class="letter-card-image">
+          <img src="nikita-morning.jpg" alt="Nikita wrapped in blanket on rocks at sunrise with a warm cup" loading="lazy">
+        </div>
+        <div class="letter-card-body">
+          <p class="letter-card-tag">The Sanctuary · Presence</p>
+          <h3 class="letter-card-title">What the Morning Looks Like Here.</h3>
+          <p class="letter-card-excerpt">A letter about mornings at Il Sentiero. The sea. The silence. The ritual that begins every day — before the work, before the guests, before the world wakes up.</p>
+          <span class="coming-soon">Coming soon</span>
+        </div>
+      </div>
+
+      <div class="letter-card">
+        <div class="letter-card-image">
+          <img src="nikita-cliff.jpg" alt="Nikita sitting on Salento cliffs smiling with sea behind her" loading="lazy">
+        </div>
+        <div class="letter-card-body">
+          <p class="letter-card-tag">The Path · Nature</p>
+          <h3 class="letter-card-title">On Arriving Somewhere You Have Never Been — and Knowing.</h3>
+          <p class="letter-card-excerpt">I had never been to Salento before I moved here. I saw a house for rent and felt it in my entire body. This is a letter about that kind of knowing — and learning to trust it.</p>
+          <span class="coming-soon">Coming soon</span>
+        </div>
+      </div>
+
+      <div class="letter-card">
+        <div class="letter-card-image">
+          <img src="fire-evening.jpg" alt="Evening fire on the Il Sentiero terrace at night in Salento" loading="lazy">
+        </div>
+        <div class="letter-card-body">
+          <p class="letter-card-tag">The Sanctuary · Presence</p>
+          <h3 class="letter-card-title">What Happens Around the Fire.</h3>
+          <p class="letter-card-excerpt">Every evening at Il Sentiero ends the same way. The fire, the darkness, the sound of the sea. Something about fire makes people honest. This is a letter about that.</p>
+          <span class="coming-soon">Coming soon</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<div class="closing">
+  <p class="closing-quote fade">"Writing is one of the practices. I offer it back so you do not have to begin <em>alone.</em>"</p>
+  <p class="closing-attr">— Nikita</p>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <p class="footer-brand"><img src="labyrinth-white.png" alt="Il Sentiero" class="footer-labyrinth"> Il Sentiero</p>
+      <p class="footer-sub">Sanctuary between Land & Sea.<br>Held by Nikita · Salento, Southern Italy.</p>
+      <a href="https://www.instagram.com/wild.woman.nikita" target="_blank" class="footer-ig">@wild.woman.nikita</a>
+    </div>
+    <div>
+      <p class="footer-h">Navigate</p>
+      <ul class="footer-nav">
+        <li><a href="about.html">Nikita</a></li>
+        <li><a href="retreats.html">Retreats</a></li>
+        <li><a href="journal.html">Journal</a></li>
+        <li><a href="connect.html">Connect</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-h">Season</p>
+      <ul class="footer-nav">
+        <li><a href="retreats.html">Spring retreats open</a></li>
+        <li><a href="retreats.html">The Still Season · July–Aug</a></li>
+        <li><a href="retreats.html">Autumn retreats · Aug–Nov</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-h">Contact</p>
+      <div class="footer-contact">
+        Via Vittorio Bottego 100<br>
+        73039 Tricase Porto, Puglia<br>
+        <a href="tel:+31638739760">NL +31 6 3873 9760</a><br>
+        <a href="tel:+393339261696">IT +39 333 926 1696</a><br>
+        <a href="mailto:nsjaspers@gmail.com">nsjaspers@gmail.com</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Il Sentiero · Nikita Jaspers</span>
+    <span>Salento · Puglia · Italy</span>
+  </div>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(el => { if (el.isIntersecting) el.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade').forEach(el => obs.observe(el));
+
+  // Theme filter — visual only for now
+  document.querySelectorAll('.theme-tag').forEach(tag => {
+    tag.addEventListener('click', (e) => {
+      e.preventDefault();
+      document.querySelectorAll('.theme-tag').forEach(t => t.classList.remove('active'));
+      tag.classList.add('active');
+    });
+  });
+
+  // Hamburger menu
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  if (hamburger) {
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+    });
+    document.addEventListener('click', (e) => {
+      if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+        mobileMenu.classList.remove('open');
+      }
+    });
+  }
+
+</script>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
+</body>
+</html>

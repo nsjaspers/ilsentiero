@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- English -->
+  <url><loc>https://ilsentiero.world/</loc><priority>1.0</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ilsentiero.world/about.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ilsentiero.world/retreats.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ilsentiero.world/journal.html</loc><priority>0.7</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://ilsentiero.world/connect.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+
+  <!-- Nederlands -->
+  <url><loc>https://ilsentiero.world/nl/index.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ilsentiero.world/nl/about.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ilsentiero.world/nl/retreats.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ilsentiero.world/nl/journal.html</loc><priority>0.6</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://ilsentiero.world/nl/connect.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+
+  <!-- Italiano -->
+  <url><loc>https://ilsentiero.world/it/index.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ilsentiero.world/it/about.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ilsentiero.world/it/retreats.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ilsentiero.world/it/journal.html</loc><priority>0.6</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://ilsentiero.world/it/connect.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+
+</urlset>
